@@ -38,7 +38,7 @@
         >
       </p>
       <div class="pattern"></div>
-        <button class="dice" id="dice" onclick="qouteLoad()"><img src="icon-dice.svg" alt="icon-dice" /></button>
+        <button id="dice" onclick="qouteLoad()"><img src="icon-dice.svg" alt="icon-dice" /></button>
     </div>
 
     <div class="attribution">
@@ -49,19 +49,18 @@
     </div>
 
     <script>
-      connst url = "https://api.adviceslip.com/advice/";
-      const quoteText = document.getElementById("qoute");
-      const quoteNumber = document.getElementById("number");
-
-      const quoteLoad = function () {
-        fetch("https://api.adviceslip.com/advice")
-          .then((response) => response.json())
-          .then((data) => {
-            quoteNumber.innerText = `#${data.slip.id}`;
-            quoteText.innerText = `"${data.slip.advice}"`;
-          });
-      };
-
+      const url = "https://api.adviceslip.com/advice";
+      var id = 0;
+      var string = "";
+      async function load() {
+        fetch(url)
+        .then(res) => res.json {})
+        .then ((data => {
+          id = data.slip.id;
+          string = data.slip.adviceSelector(".number").textContent = 'advice #${id}';
+        }
+      }
+      
     </script>
-  </body>
+  </body
 </html>
