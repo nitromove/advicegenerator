@@ -30,8 +30,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <h1 id="qoute-number">Advice #117</h1>
-      <p id="card-qoute">
+      <h1 id="number">Advice #117</h1>
+      <p id="qoute">
         <q
           >It is easy to sit up and take notice, what's difficult is getting up
           and taking action.</q
@@ -50,15 +50,15 @@
 
     <script>
       connst url = "https://api.adviceslip.com/advice/";
-      const quoteText = document.getElementById("card-qoute");
-      const quoteNumber = document.getElementById("qoute-number");
+      const quoteText = document.getElementById("qoute");
+      const quoteNumber = document.getElementById("number");
 
       const quoteLoad = function () {
         fetch("https://api.adviceslip.com/advice")
           .then((response) => response.json())
           .then((data) => {
-            quoteNumber.innerHTML = `#${data.slip.id}`;
-            quoteText.innerHTML = `"${data.slip.advice}"`;
+            quoteNumber.innerText = `#${data.slip.id}`;
+            quoteText.innerText = `"${data.slip.advice}"`;
           });
       };
 
