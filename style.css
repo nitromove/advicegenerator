@@ -1,0 +1,79 @@
+:root {
+  --LightCyan: hsl(193, 38%, 86%);
+  --NeonGreen: hsl(150, 100%, 66%);
+  --GrayishBlue: hsl(217, 19%, 38%);
+  --DarkGrayishBlue: hsl(217, 19%, 24%);
+  --DarkBlue: hsl(218, 23%, 16%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background-color: var(--DarkBlue);
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+
+}
+
+.wrapper {
+    background-color: var(--DarkGrayishBlue);
+    color: var(--LightCyan);
+    font-weight: bolder;
+    font-size: 2.5rem;
+    margin: 5%;
+    padding: 1%;
+    border-radius: 0.5rem;
+
+}
+
+.pattern {
+    content: url(./images/pattern-divider-desktop.svg);
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: var(--NeonGreen);
+    font-size: 1.5rem;
+    margin: 5% 0;
+}
+
+.dice {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--NeonGreen);
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  position: relative;
+  bottom: -2.5rem;
+  left: 43%;
+}
+
+button {
+    outline: none;
+    border: 0px;
+    background-color: var(--NeonGreen);
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        height: min-content;
+        width: 40%;
+    }
+}

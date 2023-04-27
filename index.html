@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+
+    <title>Frontend Mentor | Advice generator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 id="qoute-number">Advice #117</h1>
+      <p id="card-qoute">
+        <q
+          >It is easy to sit up and take notice, what's difficult is getting up
+          and taking action.</q
+        >
+      </p>
+      <div class="pattern"></div>
+        <button class="dice" id="dice" onclick="qouteLoad()"><img src="images/icon-dice.svg" alt="icon-dice" /></button>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <script>
+      var apiUrl = "https://api.adviceslip.com/advice/1";
+
+let dice = document.querySelector(".dice");
+let id = document.querySelectorAll("qoute-number");
+let advice = document.querySelector("card-qoute")
+
+function qouteLoad() {
+  fetch("https://api.adviceslip.com/advice/1")
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      id.innerText = `Advice #${response.slip.id}`;
+      advice.innerText = `&#8220${response.slip.advice}&#8221`;
+    });
+}
+
+    </script>
+  </body>
+</html>
