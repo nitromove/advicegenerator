@@ -49,22 +49,18 @@
     </div>
 
     <script>
-      var apiUrl = "https://api.adviceslip.com/advice/1";
+      connst url = "https://api.adviceslip.com/advice/";
+      const quoteText = document.getElementById("card-qoute");
+      const quoteNumber = document.getElementById("qoute-number");
 
-      let dice = document.querySelector(".dice");
-      let id = document.querySelectorAll("qoute-number");
-      let advice = document.querySelector("card-qoute")
-
-      function qouteLoad() {
-        fetch("https://api.adviceslip.com/advice/1")
-          .then((response) => {
-            return response.json();
-          })
-          .then((response) => {
-            id.innerText = `Advice #${response.slip.id}`;
-            advice.innerText = `&#8220${response.slip.advice}&#8221`;
+      const quoteGenerator = function () {
+        fetch("https://api.adviceslip.com/advice")
+          .then((response) => response.json())
+          .then((data) => {
+            quoteNumber.innerHTML = `#${data.slip.id}`;
+            quoteText.innerHTML = `"${data.slip.advice}"`;
           });
-      }
+      };
 
     </script>
   </body>
